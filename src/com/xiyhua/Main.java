@@ -53,6 +53,11 @@ public class Main {
                 double m1 = CalculateUtils.getM(sieves2);
                 System.out.println("M2 : " + m1);
                 System.out.println("|M1-M2| < 0.2 ? :" + CalculateUtils.validM(m, m1));
+                System.out.println("Continue or Not : (Y/N)?");
+                String next = scanner.next();
+                if (next.equals("N")) {
+                    break;
+                }
             }
         }catch (Exception e){
             e.printStackTrace();
