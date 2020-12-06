@@ -1,5 +1,9 @@
 package com.xiyhua;
 
+import com.xiyhua.core.util.CalculateUtils;
+
+import java.util.Arrays;
+
 /***************************************************************************
  * <PRE>
  *  Project Name    : local
@@ -21,6 +25,6 @@ package com.xiyhua;
 public class Test {
     public static void main(String[] args) {
         //System.out.println(Arrays.toString(CalculateUtils.getMs(0)));
-        System.out.println(new Double(1.001+2));
+        System.out.println(Arrays.toString(CalculateUtils.getAccumulatedScreenResidues(2.0)));
     }
 }

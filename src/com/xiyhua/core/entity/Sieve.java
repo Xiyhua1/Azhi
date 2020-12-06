@@ -1,5 +1,7 @@
 package com.xiyhua.core.entity;
 
+import com.xiyhua.core.util.CalculateUtils;
+
 /***************************************************************************
  * <PRE>
  *  Project Name    : local
@@ -22,19 +24,19 @@ public class Sieve {
     private double sieveResidue;
     private double separateSieveResidue;
     private double accumulatedScreenResidue;
-    public Sieve(double sieveResidue,Sieve sieve){
-        this.sieveResidue=sieveResidue;
-        calculate(sieve);
+    public Sieve(double accumulatedScreenResidue,Sieve sieve){
+        this.accumulatedScreenResidue=accumulatedScreenResidue;
+        calculateSeparateSieveResidue(sieve);
+        this.sieveResidue=separateSieveResidue*500;
     }
-    public Sieve(double sieveResidue){
-        this(sieveResidue,null);
-    }
-    private void calculate(Sieve sieve) {
-        separateSieveResidue=sieveResidue/500;
+    private void calculateSeparateSieveResidue(Sieve sieve) {
         if(sieve!=null){
-            accumulatedScreenResidue=separateSieveResidue+sieve.getSeparateSieveResidue();
+            separateSieveResidue= CalculateUtils.
+                    getFormatValue(CalculateUtils.DECIMAL_FORMAT
+                            ,accumulatedScreenResidue-sieve.accumulatedScreenResidue);
+        } else {
+            separateSieveResidue=accumulatedScreenResidue;
         }
-        accumulatedScreenResidue=separateSieveResidue;
     }
 
     public double getSieveResidue() {
@@ -56,6 +58,7 @@ public class Sieve {
     public double getAccumulatedScreenResidue() {
         return accumulatedScreenResidue;
     }
+
 
     public void setAccumulatedScreenResidue(double accumulatedScreenResidue) {
         this.accumulatedScreenResidue = accumulatedScreenResidue;
