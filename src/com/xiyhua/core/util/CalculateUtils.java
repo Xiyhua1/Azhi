@@ -25,8 +25,7 @@ import java.util.Random;
  * </PRE>
  ***************************************************************************/
 public class CalculateUtils {
-    public static final DecimalFormat DECIMAL_FORMAT=new DecimalFormat("0.000");
-    public static final DecimalFormat AVG_DECIMAL_FORMAT=new DecimalFormat("0.00");
+    public static final DecimalFormat DECIMAL_FORMAT=new DecimalFormat("0.0");
     public static final DecimalFormat M_DECIMAL_FORMAT=new DecimalFormat("0.0");
     public static double[] getAccumulatedScreenResidues(double m){
         double[] doubles = new double[2];

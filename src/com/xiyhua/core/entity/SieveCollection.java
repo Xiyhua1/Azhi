@@ -41,8 +41,7 @@ public class SieveCollection {
                 "|平均"+ getAvg()+
                 '}';
     }
-    public double getAvg(){
-        return CalculateUtils.getFormatValue(CalculateUtils.AVG_DECIMAL_FORMAT
-                ,(sieve1.getAccumulatedScreenResidue()+sieve2.getAccumulatedScreenResidue())/2);
+    public int getAvg(){
+        return (int)(sieve1.getAccumulatedScreenResidue()+sieve2.getAccumulatedScreenResidue())/2;
     }
 }
