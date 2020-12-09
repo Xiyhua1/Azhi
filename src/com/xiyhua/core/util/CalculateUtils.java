@@ -1,8 +1,10 @@
 package com.xiyhua.core.util;
 
 import com.xiyhua.core.entity.Sieve;
+import com.xiyhua.core.entity.SieveCollection;
 
 import java.text.DecimalFormat;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -26,7 +28,7 @@ import java.util.Random;
  ***************************************************************************/
 public class CalculateUtils {
     public static final DecimalFormat DECIMAL_FORMAT=new DecimalFormat("0.0");
-    public static final DecimalFormat M_DECIMAL_FORMAT=new DecimalFormat("0.0");
+    public static final DecimalFormat M_DECIMAL_FORMAT=new DecimalFormat("0.00");
     public static double[] getAccumulatedScreenResidues(double m){
         double[] doubles = new double[2];
         Random random=new Random();
@@ -51,5 +53,13 @@ public class CalculateUtils {
 
     public static boolean validM(double m, double m1) {
         return m-m1<0.2||m1-m<0.2;
+    }
+    public static void printDSieveResidue(List<SieveCollection> list){
+        double a1=0,a2=0;
+        for (SieveCollection collections : list) {
+            a1+=collections.getSieve1().getSieveResidue();
+            a2+=collections.getSieve2().getSieveResidue();
+        }
+        System.out.println("底 1 筛余："+(500-a1)+"| 2 筛余："+(500-a2));
     }
 }

@@ -29,11 +29,19 @@ public class SieveCollection {
         this.sieve2 = sieve2;
     }
 
+    public Sieve getSieve1() {
+        return sieve1;
+    }
+
+    public Sieve getSieve2() {
+        return sieve2;
+    }
+
     @Override
     public String toString() {
         return "SieveCollection{" +
-                "1筛余=" +  CalculateUtils.getFormatValue(CalculateUtils.M_DECIMAL_FORMAT,sieve1.getSieveResidue()/100) +
-                "|2筛余=" + CalculateUtils.getFormatValue(CalculateUtils.M_DECIMAL_FORMAT,sieve2.getSieveResidue()/100) +
+                "1筛余=" +  CalculateUtils.getFormatValue(CalculateUtils.DECIMAL_FORMAT,sieve1.getSieveResidue()/100) +
+                "|2筛余=" + CalculateUtils.getFormatValue(CalculateUtils.DECIMAL_FORMAT,sieve2.getSieveResidue()/100) +
                 "|1分计筛余" + sieve1.getSeparateSieveResidue() +
                 "|2分计筛余"+sieve2.getSeparateSieveResidue()+
                 "|1累计筛余"+sieve1.getAccumulatedScreenResidue()+
