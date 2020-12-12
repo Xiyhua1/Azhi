@@ -27,12 +27,12 @@ public class Sieve {
     public Sieve(double accumulatedScreenResidue,Sieve sieve){
         this.accumulatedScreenResidue=accumulatedScreenResidue;
         calculateSeparateSieveResidue(sieve);
-        this.sieveResidue=separateSieveResidue*500;
+        this.sieveResidue=CalculateUtils.getDecimalValue(CalculateUtils.DECIMAL_LENGTH_1,separateSieveResidue*500/100);
     }
     private void calculateSeparateSieveResidue(Sieve sieve) {
         if(sieve!=null){
             separateSieveResidue= CalculateUtils.
-                    getFormatValue(CalculateUtils.DECIMAL_FORMAT
+                    getDecimalValue(CalculateUtils.DECIMAL_LENGTH_1
                             ,accumulatedScreenResidue-sieve.accumulatedScreenResidue);
         } else {
             separateSieveResidue=accumulatedScreenResidue;

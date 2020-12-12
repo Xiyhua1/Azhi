@@ -40,8 +40,8 @@ public class SieveCollection {
     @Override
     public String toString() {
         return "SieveCollection{" +
-                "1筛余=" +  CalculateUtils.getFormatValue(CalculateUtils.DECIMAL_FORMAT,sieve1.getSieveResidue()/100) +
-                "|2筛余=" + CalculateUtils.getFormatValue(CalculateUtils.DECIMAL_FORMAT,sieve2.getSieveResidue()/100) +
+                "1筛余=" +  sieve1.getSieveResidue() +
+                "|2筛余=" + sieve2.getSieveResidue() +
                 "|1分计筛余" + sieve1.getSeparateSieveResidue() +
                 "|2分计筛余"+sieve2.getSeparateSieveResidue()+
                 "|1累计筛余"+sieve1.getAccumulatedScreenResidue()+

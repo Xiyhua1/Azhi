@@ -61,7 +61,6 @@ public class Main {
                 }
             }
         }catch (Exception e){
-            e.printStackTrace();
             ExceptionUtils.process(e);
         }
     }
