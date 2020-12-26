@@ -56,6 +56,7 @@ public class Main {
                 CalculateUtils.printDSieveResidue(collections);
                 System.out.println("Continue or Not : (Y/N)?");
                 String next = scanner.next();
+                System.out.println("");
                 if (next.equals("N")) {
                     break;
                 }

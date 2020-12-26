@@ -39,15 +39,13 @@ public class SieveCollection {
 
     @Override
     public String toString() {
-        return "SieveCollection{" +
-                "1筛余=" +  sieve1.getSieveResidue() +
+        return "1筛余=" +  sieve1.getSieveResidue() +
                 "|2筛余=" + sieve2.getSieveResidue() +
                 "|1分计筛余" + sieve1.getSeparateSieveResidue() +
                 "|2分计筛余"+sieve2.getSeparateSieveResidue()+
                 "|1累计筛余"+sieve1.getAccumulatedScreenResidue()+
                 "|2累计筛余"+sieve2.getAccumulatedScreenResidue()+
-                "|平均"+ getAvg()+
-                '}';
+                "|平均"+ getAvg();
     }
     public int getAvg(){
         return (int)(sieve1.getAccumulatedScreenResidue()+sieve2.getAccumulatedScreenResidue())/2;
